@@ -40,13 +40,6 @@ function moe_meta_box_save( $post_id )
 	// if our current user can't edit this post, bail
 	if( !current_user_can( 'edit_post' ) ) return;
 	
-	// now we can actually save the data
-	$allowed = array( 
-		'a' => array( // on allow a tags
-			'href' => array() // and those anchords can only have href attribute
-		)
-	);
-	
 	// Probably a good idea to make sure your data is set
 	// This is purely my personal preference for saving checkboxes
 	$chk = ( isset( $_POST['moe_featured_checkbox'] ) && $_POST['moe_featured_checkbox'] ) ? 'on' : 'off';
