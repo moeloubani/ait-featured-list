@@ -42,9 +42,7 @@ $moe_options_panel->TabsListing(array(
 	)
 ));
 
-/**
- * Open admin page first tab
- */
+/* Open admin page first tab */
 $moe_options_panel->OpenTab('options_1');
 
 /*Add fields admin page */
@@ -147,7 +145,7 @@ add_action( 'save_post', 'moe_meta_box_save' );
 
 //Swap theme search with plugin page
 
-function templateRedirect()
+function moe_template_redirect()
 {
 	if (isset($_GET['dir-search'])) {
 	$search_template = dirname( __FILE__ ) . '/themefiles/search.php';
@@ -157,4 +155,4 @@ function templateRedirect()
 }
  
 // add our function to template_redirect hook
-add_action('template_redirect', 'templateRedirect');
+add_action('template_redirect', 'moe_template_redirect');
