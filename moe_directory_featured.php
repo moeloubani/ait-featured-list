@@ -11,51 +11,50 @@ Author URI: http://www.moeloubani.com
 /* THEME OPTIONS PAGE ADD */
 
 //include the main class file
-	require_once("admin-page-class/admin-page-class.php");
+require_once("admin-page-class/admin-page-class.php");
 	
-	
-	/**
-	 * configure your admin page
-	 */
-	$config = array(        
-		'menu'             => 'settings',
-		'page_title'       => __('Featured Listing Settings','moe_featured_td'),
-		'capability'       => 'edit_themes',
-		'option_group'     => 'moe_featured_settings', 
-		'id'               => 'moe_featured_settings_admin',
-		'fields'           => array(),
-		'local_images'     => false,
-		'use_with_theme'   => false
-	);    
-	
-	/**
-	 * Initiate your admin page
-	 */
-	$moe_options_panel = new BF_Admin_Page_Class($config);
-	$moe_options_panel->OpenTabs_container('');
-	
-	/**
-	 * define your admin page tabs listing
-	 */
-	$moe_options_panel->TabsListing(array(
-		'links' => array(
-		'options_1' =>    __('Options','moe_featured_td'),
-		)
-	));
-	
-	/**
-	 * Open admin page first tab
-	 */
-	$moe_options_panel->OpenTab('options_1');
+/**
+ * configure your admin page
+ */
+$config = array(        
+	'menu'             => 'settings',
+	'page_title'       => __('Featured Listing Settings','moe_featured_td'),
+	'capability'       => 'edit_themes',
+	'option_group'     => 'moe_featured_settings', 
+	'id'               => 'moe_featured_settings_admin',
+	'fields'           => array(),
+	'local_images'     => false,
+	'use_with_theme'   => false
+);    
 
-	/*Add fields admin page */
+/**
+ * Initiate your admin page
+ */
+$moe_options_panel = new BF_Admin_Page_Class($config);
+$moe_options_panel->OpenTabs_container('');
 
-	//title
-	$moe_options_panel->Title(__("Featured Listings Options","moe_featured_td"));
-	//Roles checkbox field
-	$moe_options_panel->addRoles('moe_roles_id',array('type' => 'checkbox_list' ),array('name'=> __('Allowed Packages','moe_featured_td'), 'desc' => __('Turn on the roles you would like to enable featured for.','moe_featured_td')));
+/**
+ * define your admin page tabs listing
+ */
+$moe_options_panel->TabsListing(array(
+	'links' => array(
+	'options_1' =>    __('Options','moe_featured_td'),
+	)
+));
 
-	$moe_options_panel->CloseTab();
+/**
+ * Open admin page first tab
+ */
+$moe_options_panel->OpenTab('options_1');
+
+/*Add fields admin page */
+
+//title
+$moe_options_panel->Title(__("Featured Listings Options","moe_featured_td"));
+//Roles checkbox field
+$moe_options_panel->addRoles('moe_roles_id',array('type' => 'checkbox_list' ),array('name'=> __('Allowed Packages','moe_featured_td'), 'desc' => __('Turn on the roles you would like to enable featured for.','moe_featured_td')));
+
+$moe_options_panel->CloseTab();
 
 function moe_get_current_role() {
 	$moe_user_current_role = wp_get_current_user();
@@ -124,7 +123,6 @@ function moe_featured_meta_cb( $post )
 		<?php   
 	}
 }
-
 
 // Save the check box
 
