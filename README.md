@@ -6,6 +6,8 @@ This plugin will add the option for featured listings to appear at the top in th
 By: Moe Loubani
 
 
-Version 1.1 - Enjoy!
+Current Version 1.1 - Enjoy!
 
 Version 1.1 - Added featured listing limit by package type, go to settings -> featured listings options -> and just follow the instructions.
+
+Version 1.0 - Plugin created
