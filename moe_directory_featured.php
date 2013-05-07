@@ -156,7 +156,8 @@ function moe_template_redirect()
 		$search_template = dirname( __FILE__ ) . '/themefiles/search.php';
 		include $search_template;
 		exit;
-	}elseif (isset($_GET['dir-item-category'])) {
+	}/* For category featured work, coming later
+	elseif (isset($_GET['dir-item-category'])) {
 		$version_dump = wp_get_theme();
 		switch ($version_dump->Version) {
 			case '2.6': {
@@ -188,12 +189,9 @@ function moe_template_redirect()
 
 
 		}
-	}
+	}*/
 }
  
-/*function moe_template_redirect_wrap() {
+
 // add our function to template_redirect hook
 add_action('template_redirect', 'moe_template_redirect');
-}
-
-add_action('init', 'moe_template_redirect_wrap');*/
