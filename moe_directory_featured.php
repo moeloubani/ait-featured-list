@@ -82,7 +82,6 @@ function moe_get_current_role() {
 			foreach($saved_roles as $saved_role) {
 				if (!(($saved_role == $moe_roleslug) && isset($moe_user_current_role->roles[0]) && ($moe_user_current_role->roles[0] == $moe_rolename))) {
 						remove_action( 'post_submitbox_misc_actions', 'moe_featured_meta_cb' );
-						echo 'Suuuppzzillo';
 						break 2;
 					}
 					else { break 2; }
